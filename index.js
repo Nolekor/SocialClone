@@ -40,20 +40,16 @@ function handleRetweetClick(tweetId) {
 }
 
 function getFeedHtml() {
-  let likeIconClass = "";
-  let sharedIconClass = "";
-
   let feedHtml = ``;
   tweetsData.forEach((tweet) => {
+    let likeIconClass = "";
+    let sharedIconClass = "";
+
     if (tweet.isLiked) {
       likeIconClass = "liked";
-    } else if (!tweet.isLiked) {
-      likeIconClass = "";
     }
     if (tweet.isRetweeted) {
       sharedIconClass = "retweeted";
-    } else if (!tweet.isRetweeted) {
-      sharedIconClass = "";
     }
     feedHtml += `
     <div class="tweet">
