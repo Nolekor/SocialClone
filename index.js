@@ -45,12 +45,16 @@ function getFeedHtml() {
     let likeIconClass = "";
     let sharedIconClass = "";
 
-    if (tweet.isLiked) {
-      likeIconClass = "liked";
-    }
-    if (tweet.isRetweeted) {
-      sharedIconClass = "retweeted";
-    }
+    tweet.isLiked ? (likeIconClass = "liked") : (likeIconClass = "");
+    tweet.isRetweeted
+      ? (sharedIconClass = "retweeted")
+      : (sharedIconClass = "");
+    // if (tweet.isLiked) {
+    //   likeIconClass = "liked";
+    // }
+    // if (tweet.isRetweeted) {
+    //   sharedIconClass = "retweeted";
+    // }
     feedHtml += `
     <div class="tweet">
         <div class="tweet-inner">
